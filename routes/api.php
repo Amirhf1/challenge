@@ -19,8 +19,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('v1')->group(function () {
-    Route::post('/appointments', [AppointmentController::class, 'create']);
-    Route::get('/appointments/current', [AppointmentController::class, 'getCurrentAppointments']);
+    Route::post('/appointments', [AppointmentController::class, 'create'])->name('appointment.create');
+    Route::get('/appointments/current', [AppointmentController::class, 'getCurrentAppointments'])->name('get-current-appointments');
 });
 
 Route::prefix('v2')->group(function () {
