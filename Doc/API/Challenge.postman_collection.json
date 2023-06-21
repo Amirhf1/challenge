@@ -1,0 +1,352 @@
+{
+	"info": {
+		"_postman_id": "c7529aa8-b6a2-42ac-9858-54eab074d3d1",
+		"name": "Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List of current appointment documents",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://challenge.localhost/api/v1/appointments/current",
+					"protocol": "https",
+					"host": [
+						"challenge",
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v1",
+						"appointments",
+						"current"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "List of current appointment documents",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://challenge.localhost/api/v1/appointments/current",
+							"protocol": "https",
+							"host": [
+								"challenge",
+								"localhost"
+							],
+							"path": [
+								"api",
+								"v1",
+								"appointments",
+								"current"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Jun 2023 17:08:47 GMT"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"\",\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 31,\n                \"employee_id\": 1,\n                \"document_id\": 1,\n                \"start_time\": \"2023-06-22 09:00:00\",\n                \"end_time\": \"2023-06-22 10:00:00\",\n                \"created_at\": \"2023-06-21T16:53:28.000000Z\",\n                \"updated_at\": \"2023-06-21T16:53:28.000000Z\"\n            }\n        ],\n        \"first_page_url\": \"https://challenge.localhost/api/v1/appointments/current?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"https://challenge.localhost/api/v1/appointments/current?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"https://challenge.localhost/api/v1/appointments/current?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"https://challenge.localhost/api/v1/appointments/current\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "appointments",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "document_id",
+							"value": "2",
+							"type": "default"
+						},
+						{
+							"key": "employee_id",
+							"value": "2",
+							"type": "default"
+						},
+						{
+							"key": "start_time",
+							"value": "2023-06-22 09:00:00",
+							"type": "default"
+						},
+						{
+							"key": "end_time",
+							"value": "2023-06-22 10:00:00",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://challenge.localhost/api/v1/appointments/",
+					"protocol": "https",
+					"host": [
+						"challenge",
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v1",
+						"appointments",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "appointments - Failed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "document_id",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "employee_id",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "start_time",
+									"value": "2023-06-22 09:00:00",
+									"type": "default"
+								},
+								{
+									"key": "end_time",
+									"value": "2023-06-22 10:00:00",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://challenge.localhost/api/v1/appointments/",
+							"protocol": "https",
+							"host": [
+								"challenge",
+								"localhost"
+							],
+							"path": [
+								"api",
+								"v1",
+								"appointments",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Jun 2023 17:05:25 GMT"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Failed to create appointment. Another appointment is already active for the document.\"\n}"
+				},
+				{
+					"name": "appointments - successfully",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "document_id",
+									"value": "2",
+									"type": "default"
+								},
+								{
+									"key": "employee_id",
+									"value": "2",
+									"type": "default"
+								},
+								{
+									"key": "start_time",
+									"value": "2023-06-22 09:00:00",
+									"type": "default"
+								},
+								{
+									"key": "end_time",
+									"value": "2023-06-22 10:00:00",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://challenge.localhost/api/v1/appointments/",
+							"protocol": "https",
+							"host": [
+								"challenge",
+								"localhost"
+							],
+							"path": [
+								"api",
+								"v1",
+								"appointments",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Jun 2023 17:09:04 GMT"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "56"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Appointment created successfully.\",\n    \"data\": null\n}"
+				}
+			]
+		}
+	]
+}
