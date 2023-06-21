@@ -1,6 +1,10 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\API\V1\AppointmentController;
+use App\Http\Controllers\API\V1\DocumentController;
+use App\Models\Document;
+use App\Models\Employee;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +18,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('v1')->group(function () {
+    Route::post('/appointments', [AppointmentController::class, 'create']);
+    Route::get('/appointments/current', [AppointmentController::class, 'getCurrentAppointments']);
+});
+
+Route::prefix('v2')->group(function () {
+    // other v2 apis.
 });
