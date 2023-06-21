@@ -1,66 +1,107 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h1>Challenge</h1>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<h2>Table of Contents</h2>
 
-## About Laravel
+<ul>
+  <li><a href="#project-description">Project Description</a></li>
+  <li><a href="#features">Features</a></li>
+  <li><a href="#installation">Installation</a></li>
+  <li><a href="#usage">Usage</a></li>
+  <li><a href="#testing">Testing</a></li>
+  <li><a href="#contributing">Contributing</a></li>
+  <li><a href="#license">License</a></li>
+</ul>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<h2 id="project-description">Project Description</h2>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+suppose in a sample system, each employee has two user roles (registrant and reviewer) and the system is supposed to assign a document to a person based on priority and creation time.
+<h2 id="features">Features</h2>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+<ul>
+  <li>After the time of appointment, another person does not have access to it for registration and inspection purposes</li>
+  <li>After the end of the appointment period, if the status of the document does not change to registration and verification, it will return to the post-appointment cycle (basic status)</li>
+  <li>The employee can withdraw from the appointment that has been given and that document can no longer be viewed for review or registration.
+</li>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+</ul>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+# Installation
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1.Clone the repository:
 
-## Laravel Sponsors
+`git clone https://github.com/Amirhf1/challenge`
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+2.Navigate to the project directory:
 
-### Premium Partners
+`cd challenge`
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+3.Install the dependencies using Composer:
 
-## Contributing
+`composer install`
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4.Configure the environment variables by renaming the `.env.example` file to `.env` and updating the necessary values (database, mail, etc.).
 
-## Code of Conduct
+5.Generate the application key:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+`php artisan key:generate`
 
-## Security Vulnerabilities
+6.Run the database migrations:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+`php artisan migrate`
 
-## License
+7.Start the development server:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+`php artisan serve`
+
+8.The application should now be accessible at http://localhost:8000.
+
+## Install with Docker
+
+**Clone repository and go to repository directory**
+
+`cp .env.example .env`
+
+`composer i`
+
+`docker-compose build`
+
+`make up`
+
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+make test 
+```
+
+Code coverage report (HTML)
+```bash
+make html 
+```
+
+## Code Style
+
+Improve code style with **[laravel/pint](https://github.com/laravel/pint)**
+
+Show the parts that have problems
+```bash
+make pint-test 
+``` 
+Fix the parts that have problems
+```bash
+make pint  
+```
+
+<h2 id="contributing">Contributing</h2>
+
+<p>Specify how others can contribute to your project. You can include guidelines for reporting issues, submitting feature requests, or making pull requests. Mention any coding conventions, standards, or guidelines that contributors should follow. Provide instructions for setting up the development environment and making contributions.</p>
+
+<h2 id="license">License</h2>
+
+<p>Indicate the license under which your project is distributed. For example:</p>
+
+<p>This project is licensed under the <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
+
+<p>You can customize the sections and content of the `README.md` file based on your project's specific needs. Make sure to provide clear instructions and relevant information to help users understand and use your project effectively.</p>
